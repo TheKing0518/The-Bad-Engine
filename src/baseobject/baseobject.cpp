@@ -2,7 +2,7 @@
 #include <imageloader.h>
 #include <game.h>
 
-Thing::Thing(const char* texpath, SDL_Renderer* ren, double x, double y, int w, int h) {
+Thing::Thing(const char* texpath, SDL_Renderer* ren, float x, float y, int w, int h) {
 	render = ren;
 	texture = ImageLoader::LoadImage(texpath, render);
 	xpos = x;
@@ -22,7 +22,7 @@ void Thing::Update() {
 	transform.h = height;
 }
 
-void Thing::ChangePos(double xnew, double ynew) {
+void Thing::ChangePos(float xnew, float ynew) {
 	xpos = xnew;
 	ypos = ynew;
 }
