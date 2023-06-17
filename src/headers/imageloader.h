@@ -5,5 +5,5 @@
 class ImageLoader {
 public:
 	static SDL_Texture* LoadImage(const char* filename, SDL_Renderer* renderer);
-	static SDL_Texture* LoadText(const char* text, SDL_Renderer* renderer, SDL_Rect& rect);
+	static SDL_Texture* LoadText(const char* text, SDL_Renderer* renderer, SDL_Rect& rect, int size);
 };

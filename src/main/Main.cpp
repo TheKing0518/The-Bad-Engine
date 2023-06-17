@@ -15,12 +15,12 @@ int main(int argc, char* argv[]) {
 		a = SDL_GetTicks();
 		delta += a - b;
 
-		if (delta > 1000 / 60.0) {
+		if (delta > 100000 / 61.0) {
 
 			b = a;
 
 			game->handleEvents();
-			game->update(delta);
+			game->update();
 			game->render(delta);
 
 			delta = 0;

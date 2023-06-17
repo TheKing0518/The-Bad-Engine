@@ -73,15 +73,24 @@ void Game::handleEvents() {
 	}
 }
 
-void Game::update(double delta) {
+void Game::update() {
 	bg->Update();
 	bowl->Update();
 	egg->Update();
 	butter->Update();
+
+	if (leftclick) {
+		egg->ChangePos(mousex - (egg->width / 2), mousey - (egg->height / 2));
+	}
+
+	if (rightclick) {
+		butter->ChangePos(mousex - (butter->width / 2), mousey - (butter->height / 2));
+	}
+
 }
 
 void Game::render(double delta) {
-	int fps = 1000 / delta;
+	int fps = 100000 / delta;
 	SDL_RenderClear(renderer);
 
 	bg->Render(renderer);
@@ -93,7 +102,7 @@ void Game::render(double delta) {
 
 	std::string debugstuff = ("FPS: " + std::to_string(fps) + " || " + std::to_string(mousex) + " : " + std::to_string(mousey) + " || LMouse : " + std::to_string(leftclick) + " || RMouse : " + std::to_string(rightclick));
 
-	SDL_Texture* Message = ImageLoader::LoadText(debugstuff.c_str(), renderer, Message_rect);
+	SDL_Texture* Message = ImageLoader::LoadText(debugstuff.c_str(), renderer, Message_rect, 30);
 
 	SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
 

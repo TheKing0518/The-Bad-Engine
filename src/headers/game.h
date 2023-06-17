@@ -9,7 +9,7 @@ public:
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	
 	void handleEvents();
-	void update(double delta);
+	void update();
 	void render(double delta);
 	void clean();
 
