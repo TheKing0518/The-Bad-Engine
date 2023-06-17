@@ -1,12 +1,13 @@
 #include "game.h"
 #include <baseobject.h>
+#include <ingredient.h>
 #include <imageloader.h>
 #include <string>
 
 Thing* bg;
 Thing* bowl;
-Thing* egg;
-Thing* butter;
+Ingredient* egg;
+Ingredient* butter;
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
@@ -34,10 +35,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	else {
 		isRunning = false;
 	}
-	bg = new Thing("res/background/kitchen.png", renderer, 0, 0, 800, 600);
-	bowl = new Thing("res/items/bowl.png", renderer, 0, 0, 800, 600);
-	egg = new Thing("res/ingredients/egg.png", renderer, (800 / 4) * 3, (600 / 3) * 2, 42, 55);
-	butter = new Thing("res/ingredients/butter.png", renderer, (800 / 4), (600 / 3) * 2, 100, 25);
+	bg = new Thing("res/background/kitchen.png", renderer, 0, 0);
+	bowl = new Thing("res/items/bowl.png", renderer, 0, 0);
+	egg = new Ingredient("res/ingredients/egg.png", renderer, (800 / 4) * 3, (600 / 3) * 2, 0.333, 50.0);
+	butter = new Ingredient("res/ingredients/butter.png", renderer, (800 / 4), (600 / 3) * 2, 2, 50.0);
 
 	
 }
@@ -76,17 +77,8 @@ void Game::handleEvents() {
 void Game::update() {
 	bg->Update();
 	bowl->Update();
-	egg->Update();
-	butter->Update();
-
-	if (leftclick) {
-		egg->ChangePos(mousex - (egg->width / 2), mousey - (egg->height / 2));
-	}
-
-	if (rightclick) {
-		butter->ChangePos(mousex - (butter->width / 2), mousey - (butter->height / 2));
-	}
-
+	egg->Update(mousex, mousey, leftclick);
+	butter->Update(mousex, mousey, leftclick);
 }
 
 void Game::render(double delta) {
@@ -98,19 +90,16 @@ void Game::render(double delta) {
 	egg->Render(renderer);
 	butter->Render(renderer);
 
-	SDL_Rect Message_rect;
-
-	std::string debugstuff = ("FPS: " + std::to_string(fps) + " || " + std::to_string(mousex) + " : " + std::to_string(mousey) + " || LMouse : " + std::to_string(leftclick) + " || RMouse : " + std::to_string(rightclick));
-
-	SDL_Texture* Message = ImageLoader::LoadText(debugstuff.c_str(), renderer, Message_rect, 30);
-
-	SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
-
-	SDL_DestroyTexture(Message);
+	if (debug) {
+		SDL_Rect Message_rect;
+		std::string debugstuff = ("FPS: " + std::to_string(fps) + " || " + std::to_string(mousex) + " : " + std::to_string(mousey) + " || LMouse : " + std::to_string(leftclick) + " || RMouse : " + std::to_string(rightclick));
+		SDL_Texture* Message = ImageLoader::LoadText(debugstuff.c_str(), renderer, Message_rect, 30);
+		SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+		SDL_DestroyTexture(Message);
+	}
 
 	SDL_RenderPresent(renderer);
 
-	SDL_DestroyTexture(Message);
 }
 
 void Game::clean() {

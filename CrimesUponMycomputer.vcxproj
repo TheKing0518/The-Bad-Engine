@@ -154,6 +154,7 @@
     <ClCompile Include="src\baseobject\baseobject.cpp" />
     <ClCompile Include="src\game\game.cpp" />
     <ClCompile Include="src\imageloader\imageloader.cpp" />
+    <ClCompile Include="src\ingredients\ingredient.cpp" />
     <ClCompile Include="src\main\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="src\headers\baseobject.h" />
     <ClInclude Include="src\headers\game.h" />
     <ClInclude Include="src\headers\imageloader.h" />
+    <ClInclude Include="src\headers\ingredient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

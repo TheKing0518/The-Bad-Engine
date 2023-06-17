@@ -27,6 +27,9 @@
     <ClCompile Include="src\baseobject\baseobject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ingredients\ingredient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\lib\SDL2\SDL2.lib" />
@@ -40,6 +43,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\headers\baseobject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headers\ingredient.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

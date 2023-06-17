@@ -21,6 +21,8 @@ public:
 	bool leftclick = false;
 	bool rightclick = false;
 
+	bool debug = true;
+
 private:
 	bool isRunning;
 	SDL_Window* window;
