@@ -15,23 +15,23 @@ int a = SDL_GetTicks();
 int b = SDL_GetTicks();
 
 int main(int argc, char* argv[]) {
-game = new Game();
+	game = new Game();
 
-game->init({put the window name here}, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, {width}, {height}, {fullscreen});
+	game->init({put the window name here}, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, {width}, {height}, {fullscreen});
 
-while (game->running()) {
-	a = SDL_GetTicks();
-	delta += a - b;
-	b = a;
+	while (game->running()) {
+		a = SDL_GetTicks();
+		delta += a - b;
+		b = a;
       
-	game->handleEvents();
-	game->update(delta);
-	game->render(delta);
+		game->handleEvents();
+		game->update(delta);
+		game->render(delta);
 
-	delta = 0;
+		delta = 0;
 
-}
-game->clean();
-return 0;
+	}
+	game->clean();
+	return 0;
 }
 ```
