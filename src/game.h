@@ -9,8 +9,8 @@ public:
 	void init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen);
 	
 	void handleEvents();
-	void update();
-	void render(double delta);
+	void update(float delta);
+	void render(float delta);
 	void clean();
 
 	bool running() { return isRunning; }
@@ -20,8 +20,6 @@ public:
 
 	bool leftclick = false;
 	bool rightclick = false;
-
-	bool debug = true;
 
 private:
 	bool isRunning;

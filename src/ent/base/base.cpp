@@ -1,6 +1,6 @@
-#include <baseobject.h>
-#include <imageloader.h>
-#include <game.h>
+#include <src/ent/base/base.h>
+#include <src/util/imageloader/imageloader.h>
+#include <src/game.h>
 
 Thing::Thing(const char* texpath, SDL_Renderer* ren, float x, float y) {
 	render = ren;
@@ -16,21 +16,6 @@ void Thing::Render(SDL_Renderer* render) {
 }
 
 void Thing::Update() {
-
-	if (xpos > 800 - width) {
-		xpos = 800 - width;
-	}
-	if (xpos < 0) {
-		xpos = 0;
-	}
-
-	if (ypos > 600 - height) {
-		ypos = 600 - height;
-	}
-	if (ypos < 0) {
-		ypos = 0;
-	}
-
 	transform.x = xpos;
 	transform.y = ypos;
 	transform.w = width;

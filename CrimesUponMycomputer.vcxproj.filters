@@ -18,16 +18,13 @@
     <ClCompile Include="src\main\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\game.cpp">
+    <ClCompile Include="src\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\imageloader\imageloader.cpp">
+    <ClCompile Include="src\util\imageloader\imageloader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\baseobject\baseobject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ingredients\ingredient.cpp">
+    <ClCompile Include="src\ent\base\base.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -36,17 +33,31 @@
     <Library Include="lib\lib\SDL2\SDL2main.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\headers\game.h">
+    <ClInclude Include="src\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\headers\imageloader.h">
+    <ClInclude Include="src\util\imageloader\imageloader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\headers\baseobject.h">
+    <ClInclude Include="src\ent\base\base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\headers\ingredient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\fonts\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="res\fonts\Roboto-Black.ttf" />
+    <Font Include="res\fonts\Roboto-BlackItalic.ttf" />
+    <Font Include="res\fonts\Roboto-Bold.ttf" />
+    <Font Include="res\fonts\Roboto-BoldItalic.ttf" />
+    <Font Include="res\fonts\Roboto-Italic.ttf" />
+    <Font Include="res\fonts\Roboto-Light.ttf" />
+    <Font Include="res\fonts\Roboto-LightItalic.ttf" />
+    <Font Include="res\fonts\Roboto-Medium.ttf" />
+    <Font Include="res\fonts\Roboto-MediumItalic.ttf" />
+    <Font Include="res\fonts\Roboto-Regular.ttf" />
+    <Font Include="res\fonts\Roboto-Thin.ttf" />
+    <Font Include="res\fonts\Roboto-ThinItalic.ttf" />
   </ItemGroup>
 </Project>
