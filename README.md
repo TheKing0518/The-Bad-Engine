@@ -20,15 +20,15 @@ Just do the following :
   	game->init({put the window name here}, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, {width}, {height}, {fullscreen});
   
   	while (game->running()) {
-      a = SDL_GetTicks();
-		  delta += a - b;
-      b = a;
-      
-  	  game->handleEvents();
-  		game->update(delta);
-  		game->render(delta);
-
-      delta = 0;
+	      	a = SDL_GetTicks();
+		delta += a - b;
+	      	b = a;
+	      
+	  	game->handleEvents();
+	  	game->update(delta);
+	  	game->render(delta);
+	
+	      	delta = 0;
       
   	}
   	game->clean();
