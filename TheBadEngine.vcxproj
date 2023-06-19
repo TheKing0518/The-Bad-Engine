@@ -164,9 +164,9 @@
     <Library Include="lib\lib\SDL2\SDL2main.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\ent\base\base.h" />
-    <ClInclude Include="src\game.h" />
-    <ClInclude Include="src\util\imageloader\imageloader.h" />
+    <ClInclude Include="src\ent\base\base.hpp" />
+    <ClInclude Include="src\game.hpp" />
+    <ClInclude Include="src\util\imageloader\imageloader.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="res\fonts\LICENSE.txt" />

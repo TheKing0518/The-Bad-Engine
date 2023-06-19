@@ -1,4 +1,4 @@
-#include <src/util/imageloader/imageloader.h>
+#include <src/util/imageloader/imageloader.hpp>
 
 SDL_Texture* ImageLoader::LoadImage(const char* filename, SDL_Renderer* renderer) {
 	SDL_Surface* tempsurf = IMG_Load(filename);

@@ -1,6 +1,6 @@
-#include <src/ent/base/base.h>
-#include <src/util/imageloader/imageloader.h>
-#include <src/game.h>
+#include <src/ent/base/base.hpp>
+#include <src/util/imageloader/imageloader.hpp>
+#include <src/game.hpp>
 
 Thing::Thing(const char* texpath, SDL_Renderer* ren, float x, float y) {
 	render = ren;
