@@ -1,6 +1,6 @@
-#include "game.hpp"
-#include <src/ent/base/base.hpp>
-#include <src/util/imageloader/imageloader.hpp>
+#include "game.h"
+#include <src/ent/base/base.h>
+#include <src/util/imageloader/imageloader.h>
 #include <string>
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {

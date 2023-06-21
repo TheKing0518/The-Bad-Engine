@@ -33,13 +33,13 @@
     <Library Include="lib\lib\SDL2\SDL2main.lib" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\game.hpp">
+    <ClInclude Include="src\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\util\imageloader\imageloader.hpp">
+    <ClInclude Include="src\util\imageloader\imageloader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ent\base\base.hpp">
+    <ClInclude Include="src\ent\base\base.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
