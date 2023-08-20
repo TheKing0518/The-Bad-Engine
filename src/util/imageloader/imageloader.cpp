@@ -9,7 +9,7 @@ SDL_Texture* ImageLoader::LoadImage(const char* filename, SDL_Renderer* renderer
 
 SDL_Texture* ImageLoader::LoadText(const char* text, SDL_Renderer* renderer, SDL_Rect& rect, int size) {
 	TTF_Font* Roboto = TTF_OpenFont("res/fonts/Roboto-Black.ttf", size);
-	SDL_Color Black = { 0, 0, 0 };
+	SDL_Color Black = { 255, 255, 255 };
 
 	SDL_Surface* surfaceMessage = TTF_RenderText_Solid(Roboto, text, Black);
 	SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);

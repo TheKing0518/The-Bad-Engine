@@ -2,6 +2,12 @@
 #include <src/ent/base/base.h>
 #include <src/util/imageloader/imageloader.h>
 #include <string>
+#include <src/util/debug/debug.h>
+#include <src/ent/base/base.h>
+
+DebugMenu* debug;
+
+Thing* thingtest;
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
@@ -24,6 +30,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 			std::cout << "Renderer created" << "\n";
 		}
+		
+		debug = new DebugMenu(renderer);
 
 		isRunning = true;
 
@@ -40,27 +48,35 @@ void Game::handleEvents() {
 	SDL_PollEvent(&event);
 
 	switch (event.type) {
-		case SDL_QUIT:
-			isRunning = false;
-			break;
+	case SDL_QUIT:
+		isRunning = false;
+		break;
 
-		case SDL_MOUSEMOTION:
-			SDL_GetMouseState(&mousex, &mousey);
-			break;
-		
-		case SDL_MOUSEBUTTONDOWN:
-			if (event.button.button == SDL_BUTTON_LEFT)
-				leftclick = true;
-			if (event.button.button == SDL_BUTTON_RIGHT)
-				rightclick = true;
-			break;
-		
-		case SDL_MOUSEBUTTONUP:
-			if (event.button.button == SDL_BUTTON_LEFT)
-				leftclick = false;
-			if (event.button.button == SDL_BUTTON_RIGHT)
-				rightclick = false;
-			break;
+	case SDL_MOUSEMOTION:
+		SDL_GetMouseState(&mousex, &mousey);
+		break;
+
+	case SDL_MOUSEBUTTONDOWN:
+		if (event.button.button == SDL_BUTTON_LEFT)
+			leftclick = true;
+		if (event.button.button == SDL_BUTTON_RIGHT)
+			rightclick = true;
+		break;
+
+	case SDL_MOUSEBUTTONUP:
+		if (event.button.button == SDL_BUTTON_LEFT)
+			leftclick = false;
+		if (event.button.button == SDL_BUTTON_RIGHT)
+			rightclick = false;
+		break;
+
+	case SDL_KEYDOWN:
+		keyboard[event.key.keysym.sym] = true;
+		break;
+
+	case SDL_KEYUP:
+		keyboard[event.key.keysym.sym] = false;
+		break;
 
 		default:
 			break;
@@ -68,8 +84,11 @@ void Game::handleEvents() {
 }
 
 void Game::update(float delta) {
+	float fps = 100000 / delta;
 	
-	//do update stuff
+	//render things
+
+	debug -> Update(fps);
 
 }
 
@@ -78,6 +97,10 @@ void Game::render(float delta) {
 	SDL_RenderClear(renderer);
 
 	//render things
+
+	if (keyboard[SDLK_TAB]) {
+		debug->Render(renderer);
+	}
 
 	SDL_RenderPresent(renderer);
 

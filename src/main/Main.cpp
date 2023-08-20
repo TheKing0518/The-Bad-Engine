@@ -6,7 +6,7 @@ float delta;
 int a = SDL_GetTicks();
 int b = SDL_GetTicks();
 
-float fpslimit = 60.0;
+float fpslimit = 120.0;
 
 int main(int argc, char* argv[]) {
 	game = new Game();

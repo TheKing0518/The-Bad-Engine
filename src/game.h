@@ -3,6 +3,7 @@
 #include <SDL2-Image/SDL_image.h>
 #include <SDL2-TTF/SDL_ttf.h>
 #include <iostream>
+#include <map>
 
 class Game {
 public:
@@ -23,6 +24,9 @@ public:
 	bool rightclick = false;
 
 private:
+	
+	std::map<int, bool> keyboard;
+
 	bool isRunning;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
