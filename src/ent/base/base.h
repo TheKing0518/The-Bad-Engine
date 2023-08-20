@@ -3,14 +3,12 @@
 
 class Thing {
 public:
-	Thing(const char* texpath, SDL_Renderer* ren, float x, float y);
-	void Render(SDL_Renderer* render);
-	void Update();
+	virtual void Setup(const char* texpath, SDL_Renderer* ren, float x, float y);
+	virtual void Render(SDL_Renderer* render);
+	virtual void Update();
 
 	void ChangePos(float xnew, float ynew);
 	void ChangeDim(int wnew, int hnew);
-	
-private:
 
 	float xpos = 0.0;
 	float ypos = 0.0;

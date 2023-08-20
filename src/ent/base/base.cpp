@@ -2,7 +2,7 @@
 #include <src/util/imageloader/imageloader.h>
 #include <src/game.h>
 
-Thing::Thing(const char* texpath, SDL_Renderer* ren, float x, float y) {
+void Thing::Setup(const char* texpath, SDL_Renderer* ren, float x, float y) {
 	render = ren;
 	texture = ImageLoader::LoadImage(texpath, render);
 	xpos = x;

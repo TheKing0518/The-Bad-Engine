@@ -145,7 +145,7 @@
       <AdditionalIncludeDirectories>D:\Dev\TheBadEngine\;D:\Dev\TheBadEngine\lib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ent\base\base.cpp" />
+    <ClCompile Include="src\ent\ui\button\button.cpp" />
     <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\util\debug\debug.cpp" />
     <ClCompile Include="src\util\imageloader\imageloader.cpp" />
@@ -166,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ent\base\base.h" />
+    <ClInclude Include="src\ent\ui\button\button.h" />
     <ClInclude Include="src\game.h" />
     <ClInclude Include="src\util\debug\debug.h" />
     <ClInclude Include="src\util\imageloader\imageloader.h" />

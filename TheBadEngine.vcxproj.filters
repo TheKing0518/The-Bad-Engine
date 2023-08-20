@@ -30,6 +30,9 @@
     <ClCompile Include="src\util\debug\debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ent\ui\button\button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\lib\SDL2\SDL2.lib" />
@@ -46,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\util\debug\debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ent\ui\button\button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

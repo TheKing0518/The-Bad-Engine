@@ -3,11 +3,11 @@
 #include <src/util/imageloader/imageloader.h>
 #include <string>
 #include <src/util/debug/debug.h>
-#include <src/ent/base/base.h>
+#include <src/ent/ui/button/button.h>
 
 DebugMenu* debug;
 
-Thing* thingtest;
+Button* testbutton;
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flags = 0;
@@ -32,6 +32,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 		}
 		
 		debug = new DebugMenu(renderer);
+		testbutton = new Button("res/ui/testbutton.png", renderer, 100, 100, 200, 50);
 
 		isRunning = true;
 
@@ -87,8 +88,13 @@ void Game::update(float delta) {
 	float fps = 100000 / delta;
 	
 	//render things
+	testbutton -> Update(mousex, mousey, leftclick);
 
 	debug -> Update(fps);
+
+	if (keyboard[SDLK_ESCAPE]) {
+		isRunning = false;
+	}
 
 }
 
@@ -97,6 +103,7 @@ void Game::render(float delta) {
 	SDL_RenderClear(renderer);
 
 	//render things
+	testbutton -> Render(renderer);
 
 	if (keyboard[SDLK_TAB]) {
 		debug->Render(renderer);
