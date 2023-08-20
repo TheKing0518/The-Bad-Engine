@@ -17,13 +17,13 @@ public:
 
 	bool running() { return isRunning; }
 
+private:
+
 	int mousex = 0;
 	int mousey = 0;
 
 	bool leftclick = false;
 	bool rightclick = false;
-
-private:
 	
 	std::map<int, bool> keyboard;
 

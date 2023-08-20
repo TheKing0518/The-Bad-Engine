@@ -19,6 +19,7 @@ void DebugMenu::Update(float fps) {
 
 	debugtext = "Fps: " + std::to_string(fps);
 	texture = ImageLoader::LoadText(debugtext.c_str(), render, transform, 17);
+	SDL_QueryTexture(texture, NULL, NULL, &width, &height);
 
 	transform.x = xpos;
 	transform.y = ypos;
